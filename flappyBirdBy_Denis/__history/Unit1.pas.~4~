@@ -1,0 +1,102 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ExtCtrls,pngImage;
+
+type
+  TForm1 = class(TForm)
+    Image1: TImage;
+    Timer1: TTimer;
+    Image2: TImage;
+    Image3: TImage;
+    Image4: TImage;
+    procedure FormCreate(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
+    procedure FormKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+V:integer;
+Png_bird:TpngImage;
+Png_Ground:TpngImage;
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+V:=0;
+Form1.DoubleBuffered:=true;
+Png_bird:= TpngImage.Create;
+Png_bird.LoadFromResourceName(Hinstance, 'PngImage_1');
+Image1.Picture.Graphic:=Png_Bird;
+Png_bird.Free;
+
+
+
+Png_Ground:= TpngImage.Create;
+Png_Ground.LoadFromResourceName(Hinstance, 'PngImage_2');
+Image2.Picture.Graphic:=Png_Ground;
+Image3.Picture.Graphic:=Png_Ground;
+Image4.Picture.Graphic:=Png_Ground;
+Png_Ground.Free;
+
+Image4.Left:=Image2.width + Image3.Width -2;
+Image4.Top:=Image2.Top;
+
+end;
+
+procedure TForm1.FormKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+begin
+ if (Key = VK_SPACE) then
+ begin
+V:= V-20;
+ end;
+end;
+
+procedure TForm1.Timer1Timer(Sender: TObject);
+begin
+V:=V+1;
+Image1.Top:=Image1.Top +V;
+
+if (Image1.Top <0) then
+ begin
+   Image1.Top:=0;
+   V:=0;
+ end;
+
+   if (Image1.Top+Image1.Height >Image2.Top) then
+   begin
+     Image1.Top:=0;
+     V:=0;
+   end;
+   Image2.Left:=Image2.Left -3;
+   Image3.Left:=Image3.Left -3;
+      Image4.Left:=Image4.Left -3;
+
+      if(image2.Left <= -Image2.Width)then
+      begin
+        Image2.Left:=Form1.Width - 7;
+      end;
+
+        if(image3.Left <= -Image3.Width)then
+      begin
+        Image3.Left:=Form1.Width - 7;
+      end;
+
+        if(image4.Left <= -Image4.Width)then
+      begin
+        Image4.Left:=Form1.Width - 7;
+      end;
+end;
+
+end.

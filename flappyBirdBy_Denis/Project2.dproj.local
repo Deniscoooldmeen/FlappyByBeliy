@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2018.04.07 10:19:27.520.pas,C:\Users\Курсы\Documents\RAD Studio\Projects\Unit1.pas=C:\Delphe_Белый\flappyBirdBy_Denis\Unit1.pas</Transaction>
+    <Transaction>2018.04.07 10:19:27.520.dfm,C:\Users\Курсы\Documents\RAD Studio\Projects\Unit1.dfm=C:\Delphe_Белый\flappyBirdBy_Denis\Unit1.dfm</Transaction>
+    <Transaction>2018.04.07 10:19:29.535.dproj,C:\Users\Курсы\Documents\RAD Studio\Projects\Project2.dproj=C:\Delphe_Белый\flappyBirdBy_Denis\Project2.dproj</Transaction>
+    <Transaction>2018.04.14 10:57:16.277.png,C:\Delphe_Белый\flappyBirdBy_Denis\images\Ground_1.png=</Transaction>
+  </Transactions>
+</BorlandProject>

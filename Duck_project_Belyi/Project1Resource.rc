@@ -1,0 +1,5 @@
+PngImage_1 RCData "png\\Duck_Right.png"
+PngImage_2 RCData "png\\Duck_Left.png"
+PngImage_3 RCData "png\\Duck_Fall_Right.png"
+PngImage_4 RCData "png\\Duck_Fall_Left.png"
+PngImage_5 RCData "png\\Dog_Win.png"
